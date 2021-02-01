@@ -23,16 +23,10 @@ const Header = (props) => {
     <h1>{courseName}</h1> //one line una funcion que devuelve lo primero que esta evaluando
   )   
 }
-const Paragraph = (props) =>{
-  const part= props.part
-  return(
-    <p>
-    {part.name} {part.exercises}
-    </p>
-  )
-}
+const Paragraph = ({part}) => <p>{part.name}{part.exercises}</p> //one line
+
 const Content = (props) => {
- const parts=props.course.parts
+ const {parts}=props.course
 return(
   <>
   <Paragraph part={parts[0]}/>
