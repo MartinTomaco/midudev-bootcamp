@@ -28,7 +28,8 @@ const Paragraph = (props) =>{
   )
 }
 const Content = () => <div></div>
-const Total = ({course}) => <h1>{course}</h1>
+
+const Total = ({exerTotal}) => <p>Number of exercises {exerTotal}</p>
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -46,9 +47,7 @@ const App = () => {
       <Paragraph part={part1} exerNumber={exercises1}/>
       <Paragraph part={part2} exerNumber={exercises2}/>
       <Paragraph part={part3} exerNumber={exercises3}/>
-      <Total/>
-
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <Total exerTotal={exercises1 + exercises2 + exercises3}/>
     </div>
   )
 }
