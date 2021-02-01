@@ -1,2 +1,3 @@
-# midudev-bootcamp
-Bootcamp fullstack de midudev
+# Bootcamp Fullstack de Midu
+
+Este repo sigue el bootcamp https://fullstackopen.com/en/ guiado por el desarrolado midu
