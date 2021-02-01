@@ -16,8 +16,19 @@ const Title = (props) => {
   return <h1>{props.course}</h1>
 } */
 
-const Title = ({course}) => <h1>{course}</h1> //one line una funcion que devuelve lo primero que esta evaluando
+const Header = ({course}) => <h1>{course}</h1> //one line una funcion que devuelve lo primero que esta evaluando
 
+const Paragraph = (props) =>{
+  const part= props.part
+  const exerNumber= props.exerNumber
+  return(
+    <p>
+    {part} {exerNumber}
+    </p>
+  )
+}
+const Content = () => <div></div>
+const Total = ({course}) => <h1>{course}</h1>
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -30,17 +41,13 @@ const App = () => {
 
   return (
     <div>
-      <Title course={course}/>
-      <h1>{course}</h1>
-      <p>
-        {part1} {exercises1}
-      </p>
-      <p>
-        {part2} {exercises2}
-      </p>
-      <p>
-        {part3} {exercises3}
-      </p>
+      <Header course={course}/>
+      <Content/>
+      <Paragraph part={part1} exerNumber={exercises1}/>
+      <Paragraph part={part2} exerNumber={exercises2}/>
+      <Paragraph part={part3} exerNumber={exercises3}/>
+      <Total/>
+
       <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
     </div>
   )
