@@ -20,10 +20,9 @@ const Header = ({course}) => <h1>{course}</h1> //one line una funcion que devuel
 
 const Paragraph = (props) =>{
   const part= props.part
-  const exerNumber= props.exerNumber
   return(
     <p>
-    {part} {exerNumber}
+    {part.name} {part.exercises}
     </p>
   )
 }
@@ -33,21 +32,35 @@ const Total = ({exerTotal}) => <p>Number of exercises {exerTotal}</p>
 
 const App = () => {
   const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
+/*   const part1 = 'Fundamentals of React'
   const exercises1 = 10
   const part2 = 'Using props to pass data'
   const exercises2 = 7
   const part3 = 'State of a component'
-  const exercises3 = 14
+  const exercises3 = 14 */
+  const parts = [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }
+  ]
 
   return (
     <div>
       <Header course={course}/>
       <Content/>
-      <Paragraph part={part1} exerNumber={exercises1}/>
-      <Paragraph part={part2} exerNumber={exercises2}/>
-      <Paragraph part={part3} exerNumber={exercises3}/>
-      <Total exerTotal={exercises1 + exercises2 + exercises3}/>
+      <Paragraph part={parts[0]}/>
+      <Paragraph part={parts[1]}/>
+      <Paragraph part={parts[2]}/>
+      <Total exerTotal={parts[0].exercises + parts[1].exercises + parts[2].exercises}/>
     </div>
   )
 }
